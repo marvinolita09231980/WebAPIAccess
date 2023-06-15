@@ -14,7 +14,7 @@ namespace WebAPIAccess.Controllers
 {
     public class EmployeeOvertimeRequestController : ApiController
     {
-        private string connetionString_ats = @"Data Source=HRISD\HRIS;Initial Catalog=HRIS_ATS;User ID=sa;Password=SystemAdmin_PRD123";
+        private string connetionString_ats = GlobalClass.connetionString_ats;
         SqlConnection con;
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
