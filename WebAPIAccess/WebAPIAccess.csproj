@@ -185,6 +185,7 @@
     <Compile Include="Controllers\EmployeeTimeScheduleController.cs" />
     <Compile Include="Controllers\FunctionsChargesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListOfEmployees4IPCRController.cs" />
     <Compile Include="Controllers\ListOfEmployeesController.cs" />
     <Compile Include="Controllers\PersonnelNamesController.cs" />
     <Compile Include="Controllers\PGDDOAllEmployeesController.cs" />
@@ -197,6 +198,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
+    <Compile Include="Models\sp_get_allpersonnel_names_ipcr_api.cs" />
     <Compile Include="Models\sp_get_departments_tbl_api.cs" />
     <Compile Include="Models\sp_get_division_tbl_api.cs" />
     <Compile Include="Models\sp_get_emplphoto_api.cs" />
@@ -251,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ListOfEmployees4IPCR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
