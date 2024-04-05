@@ -31,6 +31,13 @@ namespace WebAPIAccess.Models
         public string position_title1 { get; set; }
         public string position_title2 { get; set; }
         public bool   is_pghead { get; set; }
-
+        public string employment_type { get; set; }
+        public string appointment_date { get; set; }
+        public string effective_date { get; set; }
+        public string salary_grade { get; set; }
+        public bool emp_rcrd_status { get; set; }
+        public string pwd_type_id { get; set; }
+        public string pwd_descr { get; set; }
+        public string pwd_statutory { get; set; }
     }
 }

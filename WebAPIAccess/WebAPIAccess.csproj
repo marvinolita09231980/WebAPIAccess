@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
+    <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
     <Compile Include="Controllers\EmployeesAttendanceController.cs" />
     <Compile Include="Controllers\EmployeeTimeScheduleController.cs" />
@@ -194,9 +195,14 @@
     <Compile Include="Controllers\PGDDO_Divisions_tblController.cs" />
     <Compile Include="Controllers\PGDDO_DriversController.cs" />
     <Compile Include="Controllers\PGDDO_EmployeesController.cs" />
+    <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\SubDepartmentsController.cs" />
+    <Compile Include="Controllers\SyncPositionsController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\positions.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_ipcr_api.cs" />
     <Compile Include="Models\sp_get_departments_tbl_api.cs" />
@@ -254,6 +260,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ListOfEmployees4IPCR\" />
+    <Folder Include="Views\SyncPositions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

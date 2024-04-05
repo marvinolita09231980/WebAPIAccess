@@ -59,6 +59,8 @@ namespace WebAPIAccess.Controllers
                     list.position_title2 = reader.GetString(22);
                     list.is_pghead = reader.GetBoolean(23);
                     list.salary_grade = reader.GetString(24);
+                    list.employment_type = reader.GetString(25);
+                    list.employment_type_descr = reader.GetString(26);
                     data.Add(list);
                 }
             }
