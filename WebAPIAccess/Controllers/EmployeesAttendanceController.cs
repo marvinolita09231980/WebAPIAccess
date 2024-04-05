@@ -15,8 +15,8 @@ namespace WebAPIAccess.Controllers
 {
     public class EmployeesAttendanceController : ApiController
     {
-        private string connetionString_pay = @"Data Source=HRISD\HRIS;Initial Catalog=HRIS_PAY;User ID=sa;Password=SystemAdmin_PRD123";
-        private string connetionString_ats = @"Data Source=HRISD\HRIS;Initial Catalog=HRIS_ATS;User ID=sa;Password=SystemAdmin_PRD123";
+        //private string connetionString_pay = GlobalClass.connetionString_pay;
+        private string connetionString_ats = GlobalClass.connetionString_ats;
         SqlConnection con;
 
 

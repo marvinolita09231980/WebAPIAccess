@@ -180,13 +180,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
-    <Compile Include="Controllers\DivisionsController.cs" />
+    <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
     <Compile Include="Controllers\EmployeesAttendanceController.cs" />
     <Compile Include="Controllers\EmployeeTimeScheduleController.cs" />
     <Compile Include="Controllers\FunctionsChargesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ListOfEmployees4IPCRController.cs" />
     <Compile Include="Controllers\ListOfEmployeesController.cs" />
     <Compile Include="Controllers\PersonnelNamesController.cs" />
     <Compile Include="Controllers\PGDDOAllEmployeesController.cs" />
@@ -195,16 +194,12 @@
     <Compile Include="Controllers\PGDDO_Divisions_tblController.cs" />
     <Compile Include="Controllers\PGDDO_DriversController.cs" />
     <Compile Include="Controllers\PGDDO_EmployeesController.cs" />
-    <Compile Include="Controllers\SectionsController.cs" />
-    <Compile Include="Controllers\SubDepartmentsController.cs" />
-    <Compile Include="Controllers\SyncPositionsController.cs" />
-    <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\positions.cs" />
+    <Compile Include="GlobalClass.cs" />
+    <Compile Include="Models\sp_api_cafoa.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
-    <Compile Include="Models\sp_get_allpersonnel_names_ipcr_api.cs" />
     <Compile Include="Models\sp_get_departments_tbl_api.cs" />
     <Compile Include="Models\sp_get_division_tbl_api.cs" />
     <Compile Include="Models\sp_get_emplphoto_api.cs" />
@@ -259,8 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ListOfEmployees4IPCR\" />
-    <Folder Include="Views\SyncPositions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

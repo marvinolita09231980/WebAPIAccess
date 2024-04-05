@@ -14,7 +14,7 @@ namespace WebAPIAccess.Controllers
 {
     public class PGDDO_DriversController : ApiController
     {
-        private string connetionString = @"Data Source=HRISD\HRIS;Initial Catalog=HRIS_PAY;User ID=sa;Password=SystemAdmin_PRD123";
+        private string connetionString = GlobalClass.connetionString_pay;
         SqlConnection con;
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
