@@ -61,6 +61,7 @@ namespace WebAPIAccess.Controllers
                     list.salary_grade = reader.GetString(24);
                     list.employment_type = reader.GetString(25);
                     list.employment_type_descr = reader.GetString(26);
+                    list.designate_department_code = reader.GetString(27);
                     data.Add(list);
                 }
             }

@@ -35,5 +35,6 @@ namespace WebAPIAccess.Models
         public string salary_grade { get; set; }
         public string employment_type { get; set; }
         public string employment_type_descr { get; set; }
+        public string designate_department_code { get; set; }
     }
 }
