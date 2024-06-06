@@ -183,6 +183,7 @@
     <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
+    <Compile Include="Controllers\EmployeeSalaryController.cs" />
     <Compile Include="Controllers\EmployeesAttendanceController.cs" />
     <Compile Include="Controllers\EmployeeTimeScheduleController.cs" />
     <Compile Include="Controllers\FunctionsChargesController.cs" />
@@ -204,6 +205,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GlobalClass.cs" />
+    <Compile Include="Models\EmployeeRequest.cs" />
     <Compile Include="Models\positions.cs" />
     <Compile Include="Models\sp_api_cafoa.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
