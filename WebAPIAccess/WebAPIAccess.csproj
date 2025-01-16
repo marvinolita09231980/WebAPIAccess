@@ -179,6 +179,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig2.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Controllers\PGDDO_Divisions_tblController.cs" />
     <Compile Include="Controllers\PGDDO_DriversController.cs" />
     <Compile Include="Controllers\PGDDO_EmployeesController.cs" />
+    <Compile Include="Controllers\Remittance_GSIS_RepController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="Controllers\SubDepartmentsController.cs" />
     <Compile Include="Controllers\SyncPositionsController.cs" />
