@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HRIS_PAYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="courses_tbl">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="int" Nullable="false" />
+          <Property Name="course_descr" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="school_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_by" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="created_dttm" Type="datetime" Nullable="false" />
+          <Property Name="updated_by" Type="varchar" MaxLength="15" />
+          <Property Name="updated_dttm" Type="datetime" />
+        </EntityType>
+        <EntityType Name="schools_tbl">
+          <Key>
+            <PropertyRef Name="school_id" />
+          </Key>
+          <Property Name="school_id" Type="int" Nullable="false" />
+          <Property Name="school_descr" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="school_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_by" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="created_dttm" Type="datetime" Nullable="false" />
+          <Property Name="updated_by" Type="varchar" MaxLength="15" />
+          <Property Name="updated_dttm" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="HRIS_PAYModelStoreContainer">
+          <EntitySet Name="courses_tbl" EntityType="Self.courses_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="schools_tbl" EntityType="Self.schools_tbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRIS_PAYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="courses_tbl">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="Int32" Nullable="false" />
+          <Property Name="course_descr" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="school_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_by" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dttm" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_by" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="updated_dttm" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="schools_tbl">
+          <Key>
+            <PropertyRef Name="school_id" />
+          </Key>
+          <Property Name="school_id" Type="Int32" Nullable="false" />
+          <Property Name="school_descr" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="school_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_by" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dttm" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_by" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="updated_dttm" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="HRIS_PAYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="courses_tbl" EntityType="Self.courses_tbl" />
+          <EntitySet Name="schools_tbl" EntityType="Self.schools_tbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRIS_PAYModelStoreContainer" CdmEntityContainer="HRIS_PAYEntities">
+          <EntitySetMapping Name="courses_tbl">
+            <EntityTypeMapping TypeName="HRIS_PAYModel.courses_tbl">
+              <MappingFragment StoreEntitySet="courses_tbl">
+                <ScalarProperty Name="course_id" ColumnName="course_id" />
+                <ScalarProperty Name="course_descr" ColumnName="course_descr" />
+                <ScalarProperty Name="school_type" ColumnName="school_type" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dttm" ColumnName="created_dttm" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_dttm" ColumnName="updated_dttm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="schools_tbl">
+            <EntityTypeMapping TypeName="HRIS_PAYModel.schools_tbl">
+              <MappingFragment StoreEntitySet="schools_tbl">
+                <ScalarProperty Name="school_id" ColumnName="school_id" />
+                <ScalarProperty Name="school_descr" ColumnName="school_descr" />
+                <ScalarProperty Name="school_type" ColumnName="school_type" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dttm" ColumnName="created_dttm" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_dttm" ColumnName="updated_dttm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -37,5 +37,6 @@ namespace WebAPIAccess.Models
         public string employment_type_descr { get; set; }
         public string designate_department_code { get; set; }
         public string active_status { get; set; }
+        public bool ao_tag { get; set; }
     }
 }

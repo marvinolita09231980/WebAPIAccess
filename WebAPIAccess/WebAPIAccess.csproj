@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -86,6 +92,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -179,12 +187,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig2.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
-    <Compile Include="Controllers\ActiveDivisionListController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
-    <Compile Include="Controllers\EmployeeInformationController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
     <Compile Include="Controllers\EmployeeSalaryController.cs" />
     <Compile Include="Controllers\EmployeesAttendanceController.cs" />
@@ -200,7 +205,7 @@
     <Compile Include="Controllers\PGDDO_Divisions_tblController.cs" />
     <Compile Include="Controllers\PGDDO_DriversController.cs" />
     <Compile Include="Controllers\PGDDO_EmployeesController.cs" />
-    <Compile Include="Controllers\Remittance_GSIS_RepController.cs" />
+    <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="Controllers\SubDepartmentsController.cs" />
     <Compile Include="Controllers\SyncPositionsController.cs" />
@@ -209,10 +214,30 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GlobalClass.cs" />
-    <Compile Include="Models\ActiveDivision.cs" />
+    <Compile Include="Models\courses_tbl.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmployeeRequest.cs" />
-    <Compile Include="Models\EmpoloyeeInformationModel.cs" />
+    <Compile Include="Models\HRIS_PAY.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRIS_PAY.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRIS_PAY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRIS_PAY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRIS_PAY.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\positions.cs" />
+    <Compile Include="Models\schools.cs" />
+    <Compile Include="Models\schools_tbl.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_api_cafoa.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_ipcr_api.cs" />
@@ -237,8 +262,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\HRIS_PAY.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HRIS_PAY.Context.cs</LastGenOutput>
+      <DependentUpon>HRIS_PAY.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\HRIS_PAY.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HRIS_PAY.edmx</DependentUpon>
+      <LastGenOutput>HRIS_PAY.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\HRIS_PAY.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HRIS_PAY.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HRIS_PAY.edmx.diagram">
+      <DependentUpon>HRIS_PAY.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -283,6 +325,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
