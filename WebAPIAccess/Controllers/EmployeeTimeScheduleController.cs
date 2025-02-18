@@ -19,6 +19,7 @@ namespace WebAPIAccess.Controllers
         SqlConnection con;
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
+
         [System.Web.Mvc.HttpPost]
 
         public HttpResponseMessage post(string empl_id, string year, string month)
