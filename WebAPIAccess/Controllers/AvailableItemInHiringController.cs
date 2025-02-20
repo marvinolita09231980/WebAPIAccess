@@ -49,37 +49,29 @@ namespace WebAPIAccess.Controllers
 
                
                   string  query = @"select 
-	                                     A.item_no
-		                                ,A.budget_code
-		                                ,A.employment_type
-		                                ,A.position_code
-		                                ,A.department_code
-		                                ,A.department_name1
-		                                ,A.inPublication
-		                                ,A.ctrl_no
-		                                ,A.active_status
-                                        ,C.position_title1
-                                        ,C.position_title2
-                                        ,C.position_short_title
-                                        ,C.salary_grade
-                                        ,C.csc_level
-                                        ,C.position_long_title
-                                        ,C.qs_eduction
-                                        ,C.qs_work_experience
-                                        ,C.qs_training
-                                        ,C.qs_eligibility
-                                        ,D.period_from
-                                        ,D.period_to
-                                        ,D.period_descr
-	                                FROM HRIS_APL.dbo.available_item_tbl A            
-                                    INNER JOIN HRIS_APL.dbo.employment_type_tbl B            
-                                      ON B.employment_type = A.employment_type            
-                                    INNER JOIN HRIS_PAY.dbo.positions_tbl C            
-                                    ON C.position_code = A.position_code            
-                                    INNER JOIN HRIS_RCT.dbo.psb_hiring_period_tbl D            
-                                    ON D.ctrl_nbr = A.ctrl_no  
-	                                 WHERE A.active_status = 1            
-                                    AND B.active_status = 1";
+	                                     item_no
+		                                ,budget_code
+		                                ,employment_type
+		                                ,position_code
+		                                ,department_code
+		                                ,department_name1
+		                                ,inPublication
+		                                ,ctrl_no
+		                                ,active_status
+                                        ,position_title1
+                                        ,position_title2
+                                        ,position_short_title
+                                        ,salary_grade
+                                        ,csc_level
+                                        ,position_long_title
+                                        ,qs_eduction
+                                        ,qs_work_experience
+                                        ,qs_training
+                                        ,qs_eligibility
+                                        ,period_from
+                                        ,period_to
+                                        ,period_descr
+	                                FROM HRIS_PAY.dbo.vw_AvailableItemInHiring_tbl";
                 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -99,9 +91,9 @@ namespace WebAPIAccess.Controllers
                                 position_code           = reader.GetString(3),
                                 department_code         = reader.GetString(4),
                                 department_name1        = reader.GetString(5),
-                                inPublication           = reader.GetString(6),
+                                inPublication           = reader.GetBoolean(6),
                                 ctrl_no                 = reader.GetString(7),
-                                active_status           = reader.GetString(8),
+                                active_status           = reader.GetBoolean(8),
                                 position_title1         = reader.GetString(9),
                                 position_title2         = reader.GetString(10),
                                 position_short_title    = reader.GetString(11),
@@ -125,9 +117,6 @@ namespace WebAPIAccess.Controllers
                 connection.Close();
             }
 
-
-
-            con.Close();
 
             var json = JsonConvert.SerializeObject(data, Formatting.Indented);
             return new HttpResponseMessage()
