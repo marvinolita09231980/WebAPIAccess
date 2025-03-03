@@ -47,32 +47,57 @@ namespace WebAPIAccess.Controllers
                     command.ExecuteNonQuery();
                 }
 
-               
-                  string  query = @"select 
-	                                     item_no
-		                                ,budget_code
-		                                ,employment_type
-		                                ,position_code
-		                                ,department_code
-		                                ,department_name1
-		                                ,inPublication
-		                                ,ctrl_no
-		                                ,active_status
-                                        ,position_title1
-                                        ,position_title2
-                                        ,position_short_title
-                                        ,salary_grade
-                                        ,csc_level
-                                        ,position_long_title
-                                        ,qs_eduction
-                                        ,qs_work_experience
-                                        ,qs_training
-                                        ,qs_eligibility
-                                        ,period_from
-                                        ,period_to
-                                        ,period_descr
-	                                FROM HRIS_PAY.dbo.vw_AvailableItemInHiring_tbl";
-                
+
+                //string  query = @"select 
+                //                    item_no
+                //                ,budget_code
+                //                ,employment_type
+                //                ,position_code
+                //                ,department_code
+                //                ,department_name1
+                //                ,inPublication
+                //                ,ctrl_no
+                //                ,active_status
+                //                      ,position_title1
+                //                      ,position_title2
+                //                      ,position_short_title
+                //                      ,salary_grade
+                //                      ,csc_level
+                //                      ,position_long_title
+                //                      ,qs_eduction
+                //                      ,qs_work_experience
+                //                      ,qs_training
+                //                      ,qs_eligibility
+                //                      ,period_from
+                //                      ,period_to
+                //                      ,period_descr
+                //               FROM HRIS_PAY.dbo.vw_AvailableItemInHiring_tbl";
+
+                string query = @"select 
+                                    item_no
+                                ,budget_code
+                                ,employment_type
+                                ,position_code
+                                ,department_code
+                                ,department_name1
+                                ,inPublication
+                                ,ctrl_no
+                                ,active_status
+                                      ,position_title1
+                                      ,position_title2
+                                      ,position_short_title
+                                      ,salary_grade
+                                      ,csc_level
+                                      ,position_long_title
+                                      ,qs_eduction
+                                      ,qs_work_experience
+                                      ,qs_training
+                                      ,qs_eligibility
+                                      ,period_from
+                                      ,period_to
+                                      ,period_descr
+                               FROM HRIS_PAY.dbo.vw_AvailableItemInHiring_tbl_test";
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
