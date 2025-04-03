@@ -188,6 +188,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
+    <Compile Include="Controllers\ActiveDivisionListController.cs" />
     <Compile Include="Controllers\AvailableItemInHiringController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
@@ -215,6 +216,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GlobalClass.cs" />
+    <Compile Include="Models\ActiveDivision.cs" />
     <Compile Include="Models\AvailableItemInHiring.cs" />
     <Compile Include="Models\courses_tbl.cs">
       <DependentUpon>HRIS_PAY.tt</DependentUpon>
