@@ -12,6 +12,8 @@ namespace WebAPIAccess.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HRIS_PAYEntities : DbContext
     {
@@ -27,5 +29,47 @@ namespace WebAPIAccess.Models
     
         public virtual DbSet<courses_tbl> courses_tbl { get; set; }
         public virtual DbSet<schools_tbl> schools_tbl { get; set; }
+    
+        public virtual ObjectResult<sp_hrprime_dashboard_reportAPI_Result> sp_hrprime_dashboard_reportAPI(Nullable<int> par_year, Nullable<int> par_month, string par_department_code, string par_filter_type)
+        {
+            var par_yearParameter = par_year.HasValue ?
+                new ObjectParameter("par_year", par_year) :
+                new ObjectParameter("par_year", typeof(int));
+    
+            var par_monthParameter = par_month.HasValue ?
+                new ObjectParameter("par_month", par_month) :
+                new ObjectParameter("par_month", typeof(int));
+    
+            var par_department_codeParameter = par_department_code != null ?
+                new ObjectParameter("par_department_code", par_department_code) :
+                new ObjectParameter("par_department_code", typeof(string));
+    
+            var par_filter_typeParameter = par_filter_type != null ?
+                new ObjectParameter("par_filter_type", par_filter_type) :
+                new ObjectParameter("par_filter_type", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_hrprime_dashboard_reportAPI_Result>("sp_hrprime_dashboard_reportAPI", par_yearParameter, par_monthParameter, par_department_codeParameter, par_filter_typeParameter);
+        }
+    
+        public virtual ObjectResult<sp_hrprime_dashboard_generallist_reportAPI_Result> sp_hrprime_dashboard_generallist_reportAPI(Nullable<int> par_year, Nullable<int> par_month, string par_department_code, string par_filter_type)
+        {
+            var par_yearParameter = par_year.HasValue ?
+                new ObjectParameter("par_year", par_year) :
+                new ObjectParameter("par_year", typeof(int));
+    
+            var par_monthParameter = par_month.HasValue ?
+                new ObjectParameter("par_month", par_month) :
+                new ObjectParameter("par_month", typeof(int));
+    
+            var par_department_codeParameter = par_department_code != null ?
+                new ObjectParameter("par_department_code", par_department_code) :
+                new ObjectParameter("par_department_code", typeof(string));
+    
+            var par_filter_typeParameter = par_filter_type != null ?
+                new ObjectParameter("par_filter_type", par_filter_type) :
+                new ObjectParameter("par_filter_type", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_hrprime_dashboard_generallist_reportAPI_Result>("sp_hrprime_dashboard_generallist_reportAPI", par_yearParameter, par_monthParameter, par_department_codeParameter, par_filter_typeParameter);
+        }
     }
 }

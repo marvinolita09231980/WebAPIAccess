@@ -191,6 +191,7 @@
     <Compile Include="Controllers\ActiveDivisionListController.cs" />
     <Compile Include="Controllers\AvailableItemInHiringController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
+    <Compile Include="Controllers\DashBoardFilamentAPIController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
     <Compile Include="Controllers\EmployeeSalaryController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Models\courses_tbl.cs">
       <DependentUpon>HRIS_PAY.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DashboardFilamentRequest.cs" />
     <Compile Include="Models\EmployeeRequest.cs" />
     <Compile Include="Models\HRIS_PAY.Context.cs">
       <AutoGen>True</AutoGen>
@@ -252,6 +254,12 @@
     <Compile Include="Models\sp_get_personnel_attendance_api.cs" />
     <Compile Include="Models\sp_get_personnel_names_drivers.cs" />
     <Compile Include="Models\sp_get_personnel_names_wfilter.cs" />
+    <Compile Include="Models\sp_hrprime_dashboard_generallist_reportAPI_Result.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_hrprime_dashboard_reportAPI_Result.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_personnel_requestovertime_api.cs" />
     <Compile Include="Models\sp_personnel_timeschedule_api.cs" />
     <Compile Include="Models\vw_personnelnames2_tbl.cs" />
