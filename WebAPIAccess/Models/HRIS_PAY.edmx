@@ -99,7 +99,8 @@
           <Property Type="String" Name="gender" Nullable="false" MaxLength="14" />
           <Property Type="String" Name="employment_status" Nullable="true" MaxLength="30" />
           <Property Type="Int32" Name="leave_count" Nullable="false" />
-          <Property Type="String" Name="total_lates" Nullable="true" MaxLength="63" />
+          <Property Type="String" Name="total_lates" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="birth_date" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -150,6 +151,7 @@
                 <ScalarProperty Name="employment_status" ColumnName="employment_status" />
                 <ScalarProperty Name="leave_count" ColumnName="leave_count" />
                 <ScalarProperty Name="total_lates" ColumnName="total_lates" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

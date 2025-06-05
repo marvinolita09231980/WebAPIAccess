@@ -19,5 +19,6 @@ namespace WebAPIAccess.Models
         public string employment_status { get; set; }
         public int leave_count { get; set; }
         public string total_lates { get; set; }
+        public Nullable<System.DateTime> birth_date { get; set; }
     }
 }

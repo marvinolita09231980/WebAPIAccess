@@ -191,6 +191,7 @@
     <Compile Include="Controllers\ActiveDivisionListController.cs" />
     <Compile Include="Controllers\AvailableItemInHiringController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
+    <Compile Include="Controllers\DashboardAPIController.cs" />
     <Compile Include="Controllers\DashBoardFilamentAPIController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
