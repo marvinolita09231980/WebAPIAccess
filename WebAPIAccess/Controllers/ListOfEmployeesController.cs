@@ -58,15 +58,16 @@ namespace WebAPIAccess.Controllers
                     list.position_short_title       =  reader.GetString(20);
                     list.position_title1            =  reader.GetString(21);
                     list.position_title2            =  reader.GetString(22);
-                    list.is_pghead                  = reader.GetBoolean(23);
-                    list.employment_type            = reader.GetString(24);
-                    list.appointment_date           = reader.GetString(25);
-                    list.effective_date             = reader.GetString(26);
-                    list.salary_grade               = reader.GetString(27);
-                    list.emp_rcrd_status            = reader.GetBoolean(28);
-                    list.pwd_type_id                = reader.GetString(29);
-                    list.pwd_descr                  = reader.GetString(30);
-                    list.pwd_statutory              = reader.GetString(31);
+                    list.is_pghead                  =  reader.GetBoolean(23);
+                    list.employment_type            =  reader.GetString(24);
+                    list.appointment_date           =  reader.GetString(25);
+                    list.effective_date             =  reader.GetString(26);
+                    list.salary_grade               =  reader.GetString(27);
+                    list.emp_rcrd_status            =  reader.GetBoolean(28);
+                    list.pwd_type_id                =  reader.GetString(29);
+                    list.pwd_descr                  =  reader.GetString(30);
+                    list.pwd_statutory              =  reader.GetString(31);
+                    list.is_active                  =  reader.GetBoolean(32);
                     data.Add(list);
                 }
             }

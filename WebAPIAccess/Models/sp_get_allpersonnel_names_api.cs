@@ -39,5 +39,6 @@ namespace WebAPIAccess.Models
         public string pwd_type_id { get; set; }
         public string pwd_descr { get; set; }
         public string pwd_statutory { get; set; }
+        public bool   is_active { get; set; }
     }
 }
