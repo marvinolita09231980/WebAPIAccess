@@ -29,6 +29,10 @@
           <Property Name="updated_by" Type="varchar" MaxLength="15" />
           <Property Name="updated_dttm" Type="datetime" />
         </EntityType>
+        <Function Name="sp_departments_lates_leave_to" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="par_year" Type="int" Mode="In" />
+          <Parameter Name="par_department_code" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_hrprime_dashboard_generallist_reportAPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="par_year" Type="int" Mode="In" />
           <Parameter Name="par_month" Type="int" Mode="In" />
@@ -88,6 +92,10 @@
             <Parameter Name="par_department_code" Mode="In" Type="String" />
             <Parameter Name="par_filter_type" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_departments_lates_leave_to" ReturnType="Collection(HRIS_PAYModel.sp_departments_lates_leave_to_Result)">
+            <Parameter Name="par_year" Mode="In" Type="Int32" />
+            <Parameter Name="par_department_code" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_hrprime_dashboard_reportAPI_Result">
           <Property Type="String" Name="var_labels" Nullable="true" MaxLength="50" />
@@ -101,6 +109,16 @@
           <Property Type="Int32" Name="leave_count" Nullable="false" />
           <Property Type="String" Name="total_lates" Nullable="false" MaxLength="1" />
           <Property Type="DateTime" Name="birth_date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_departments_lates_leave_to_Result">
+          <Property Type="Int32" Name="year" Nullable="true" />
+          <Property Type="Int32" Name="month" Nullable="false" />
+          <Property Type="String" Name="department_code" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="department_name1" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="undertime_minutes" Nullable="false" />
+          <Property Type="Int32" Name="travelorder_count" Nullable="false" />
+          <Property Type="Int32" Name="leave_count" Nullable="false" />
+          <Property Type="Int32" Name="absent_count" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -152,6 +170,20 @@
                 <ScalarProperty Name="leave_count" ColumnName="leave_count" />
                 <ScalarProperty Name="total_lates" ColumnName="total_lates" />
                 <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_departments_lates_leave_to" FunctionName="HRIS_PAYModel.Store.sp_departments_lates_leave_to">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HRIS_PAYModel.sp_departments_lates_leave_to_Result">
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="department_code" ColumnName="department_code" />
+                <ScalarProperty Name="department_name1" ColumnName="department_name1" />
+                <ScalarProperty Name="undertime_minutes" ColumnName="undertime_minutes" />
+                <ScalarProperty Name="travelorder_count" ColumnName="travelorder_count" />
+                <ScalarProperty Name="leave_count" ColumnName="leave_count" />
+                <ScalarProperty Name="absent_count" ColumnName="absent_count" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

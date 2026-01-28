@@ -71,5 +71,18 @@ namespace WebAPIAccess.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_hrprime_dashboard_generallist_reportAPI_Result>("sp_hrprime_dashboard_generallist_reportAPI", par_yearParameter, par_monthParameter, par_department_codeParameter, par_filter_typeParameter);
         }
+    
+        public virtual ObjectResult<sp_departments_lates_leave_to_Result> sp_departments_lates_leave_to(Nullable<int> par_year, string par_department_code)
+        {
+            var par_yearParameter = par_year.HasValue ?
+                new ObjectParameter("par_year", par_year) :
+                new ObjectParameter("par_year", typeof(int));
+    
+            var par_department_codeParameter = par_department_code != null ?
+                new ObjectParameter("par_department_code", par_department_code) :
+                new ObjectParameter("par_department_code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_departments_lates_leave_to_Result>("sp_departments_lates_leave_to", par_yearParameter, par_department_codeParameter);
+        }
     }
 }

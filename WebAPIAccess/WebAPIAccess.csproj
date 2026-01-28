@@ -187,12 +187,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig2.cs" />
     <Compile Include="Controllers\AccessAPIController.cs" />
     <Compile Include="Controllers\ActiveDivisionListController.cs" />
     <Compile Include="Controllers\AvailableItemInHiringController.cs" />
     <Compile Include="Controllers\CafoaController.cs" />
     <Compile Include="Controllers\DashboardAPIController.cs" />
     <Compile Include="Controllers\DashBoardFilamentAPIController.cs" />
+    <Compile Include="Controllers\DepartmentLatesTravelLeaveController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\EmployeeOvertimeRequestController.cs" />
     <Compile Include="Controllers\EmployeeSalaryController.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListOfEmployees4IPCRController.cs" />
     <Compile Include="Controllers\ListOfEmployeesController.cs" />
+    <Compile Include="Controllers\ListOfEmployessWithDailyRateController.cs" />
     <Compile Include="Controllers\PersonnelNamesController.cs" />
     <Compile Include="Controllers\PGDDOAllEmployeesController.cs" />
     <Compile Include="Controllers\PGDDODepartmentsController.cs" />
@@ -246,6 +249,10 @@
       <DependentUpon>HRIS_PAY.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_api_cafoa.cs" />
+    <Compile Include="Models\sp_departments_lates_leave_to_Result.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_get_allpersonnel_api_with_daily_rate.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_api.cs" />
     <Compile Include="Models\sp_get_allpersonnel_names_ipcr_api.cs" />
     <Compile Include="Models\sp_get_departments_tbl_api.cs" />
@@ -263,6 +270,7 @@
     </Compile>
     <Compile Include="Models\sp_personnel_requestovertime_api.cs" />
     <Compile Include="Models\sp_personnel_timeschedule_api.cs" />
+    <Compile Include="Models\to_lates_leave_param.cs" />
     <Compile Include="Models\vw_personnelnames2_tbl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
