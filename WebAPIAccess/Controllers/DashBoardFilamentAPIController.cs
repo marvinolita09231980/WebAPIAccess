@@ -10,12 +10,14 @@ using WebAPIAccess.Models;
 
 namespace WebAPIAccess.Controllers
 {
+    [RoutePrefix("api/DashBoardFilamentAPI")]
     public class DashBoardFilamentAPIController : ApiController
     {
         HRIS_PAYEntities db = new HRIS_PAYEntities();
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
+        [Route("PostDashboardData")]
         public HttpResponseMessage PostDashboardData([FromBody] DashboardFilamentRequest request)
         {
             try
@@ -55,6 +57,7 @@ namespace WebAPIAccess.Controllers
 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
+        [Route("PlantillaOfPersonnel")]
         public HttpResponseMessage PlantillaOfPersonnel([FromBody] DashboardFilamentRequest request)
         {
             try
