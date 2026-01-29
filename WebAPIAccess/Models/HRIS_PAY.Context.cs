@@ -84,5 +84,18 @@ namespace WebAPIAccess.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_departments_lates_leave_to_Result>("sp_departments_lates_leave_to", par_yearParameter, par_department_codeParameter);
         }
+    
+        public virtual ObjectResult<sp_plantilla_filament_API_Result> sp_plantilla_filament_API(string par_year, string par_department_code)
+        {
+            var par_yearParameter = par_year != null ?
+                new ObjectParameter("par_year", par_year) :
+                new ObjectParameter("par_year", typeof(string));
+    
+            var par_department_codeParameter = par_department_code != null ?
+                new ObjectParameter("par_department_code", par_department_code) :
+                new ObjectParameter("par_department_code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_plantilla_filament_API_Result>("sp_plantilla_filament_API", par_yearParameter, par_department_codeParameter);
+        }
     }
 }

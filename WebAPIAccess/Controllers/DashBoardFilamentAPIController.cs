@@ -51,6 +51,31 @@ namespace WebAPIAccess.Controllers
             }
         }
 
-        
+
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [HttpPost]
+        public HttpResponseMessage PlantillaOfPersonnel([FromBody] DashboardFilamentRequest request)
+        {
+            try
+            {
+                var plantilla = db.sp_plantilla_filament_API(
+                    request.year.ToString(),
+                    request.department_code
+                ).ToList();
+
+                var json = JsonConvert.SerializeObject(plantilla, Formatting.Indented);
+                return new HttpResponseMessage()
+                {
+                    Content = new StringContent(json, Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
     }
 }

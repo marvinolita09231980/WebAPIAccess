@@ -45,6 +45,10 @@
           <Parameter Name="par_department_code" Type="varchar" Mode="In" />
           <Parameter Name="par_filter_type" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_plantilla_filament_API" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="par_year" Type="varchar" Mode="In" />
+          <Parameter Name="par_department_code" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="HRIS_PAYModelStoreContainer">
           <EntitySet Name="courses_tbl" EntityType="Self.courses_tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="schools_tbl" EntityType="Self.schools_tbl" Schema="dbo" store:Type="Tables" />
@@ -96,6 +100,10 @@
             <Parameter Name="par_year" Mode="In" Type="Int32" />
             <Parameter Name="par_department_code" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_plantilla_filament_API" ReturnType="Collection(HRIS_PAYModel.sp_plantilla_filament_API_Result)">
+            <Parameter Name="par_year" Mode="In" Type="String" />
+            <Parameter Name="par_department_code" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_hrprime_dashboard_reportAPI_Result">
           <Property Type="String" Name="var_labels" Nullable="true" MaxLength="50" />
@@ -119,6 +127,24 @@
           <Property Type="Int32" Name="travelorder_count" Nullable="false" />
           <Property Type="Int32" Name="leave_count" Nullable="false" />
           <Property Type="Int32" Name="absent_count" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_plantilla_filament_API_Result">
+          <Property Type="String" Name="item_no" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="empl_id" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="position_title" Nullable="true" MaxLength="513" />
+          <Property Type="String" Name="department_short_name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="department_name1" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="monthly_rate_ny" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="daily_rate_ny" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="hourly_rate_ny" Nullable="true" Precision="19" />
+          <Property Type="String" Name="fullname" Nullable="false" MaxLength="211" />
+          <Property Type="String" Name="lastname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="firstname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="middlename" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="suffix" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="postfix" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="curtisy_title" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="employment_type" Nullable="false" MaxLength="2" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -184,6 +210,28 @@
                 <ScalarProperty Name="travelorder_count" ColumnName="travelorder_count" />
                 <ScalarProperty Name="leave_count" ColumnName="leave_count" />
                 <ScalarProperty Name="absent_count" ColumnName="absent_count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_plantilla_filament_API" FunctionName="HRIS_PAYModel.Store.sp_plantilla_filament_API">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HRIS_PAYModel.sp_plantilla_filament_API_Result">
+                <ScalarProperty Name="item_no" ColumnName="item_no" />
+                <ScalarProperty Name="empl_id" ColumnName="empl_id" />
+                <ScalarProperty Name="position_title" ColumnName="position_title" />
+                <ScalarProperty Name="department_short_name" ColumnName="department_short_name" />
+                <ScalarProperty Name="department_name1" ColumnName="department_name1" />
+                <ScalarProperty Name="monthly_rate_ny" ColumnName="monthly_rate_ny" />
+                <ScalarProperty Name="daily_rate_ny" ColumnName="daily_rate_ny" />
+                <ScalarProperty Name="hourly_rate_ny" ColumnName="hourly_rate_ny" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="suffix" ColumnName="suffix" />
+                <ScalarProperty Name="postfix" ColumnName="postfix" />
+                <ScalarProperty Name="curtisy_title" ColumnName="curtisy_title" />
+                <ScalarProperty Name="employment_type" ColumnName="employment_type" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

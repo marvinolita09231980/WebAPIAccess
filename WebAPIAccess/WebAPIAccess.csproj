@@ -270,6 +270,9 @@
     </Compile>
     <Compile Include="Models\sp_personnel_requestovertime_api.cs" />
     <Compile Include="Models\sp_personnel_timeschedule_api.cs" />
+    <Compile Include="Models\sp_plantilla_filament_API_Result.cs">
+      <DependentUpon>HRIS_PAY.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\to_lates_leave_param.cs" />
     <Compile Include="Models\vw_personnelnames2_tbl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
